@@ -2,6 +2,7 @@ package samlsp
 
 import (
 	"encoding/xml"
+	"fmt"
 	"net/http"
 
 	"github.com/crewjam/saml"
@@ -198,7 +199,9 @@ func (m *Middleware) CreateSessionFromAssertion(w http.ResponseWriter, r *http.R
 		m.OnError(w, r, err)
 		return
 	}
-
+	fmt.Println("********CreateSessionFromAssertion*******", "redirectUrl", redirectURI)
+	fmt.Println("********CreateSessionFromAssertion*******", "reponse", w)
+	fmt.Println("********CreateSessionFromAssertion*******", "reponse headers", w.Header())
 	http.Redirect(w, r, redirectURI, http.StatusFound)
 }
 
