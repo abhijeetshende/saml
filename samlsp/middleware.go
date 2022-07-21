@@ -200,7 +200,6 @@ func (m *Middleware) CreateSessionFromAssertion(w http.ResponseWriter, r *http.R
 		return
 	}
 	fmt.Println("********CreateSessionFromAssertion*******", "redirectUrl", redirectURI)
-	fmt.Println("********CreateSessionFromAssertion*******", "reponse", w)
 	fmt.Println("********CreateSessionFromAssertion*******", "reponse headers", w.Header())
 	http.Redirect(w, r, redirectURI, http.StatusFound)
 }
