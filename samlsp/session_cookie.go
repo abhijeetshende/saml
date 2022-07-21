@@ -57,7 +57,7 @@ func (c CookieSessionProvider) CreateSession(w http.ResponseWriter, r *http.Requ
 	fmt.Println("***********************************SET COOKIE DEBUG 1************************************************")
 	http.SetCookie(w, &http.Cookie{
 		Name:     c.Name,
-		Domain:   "*.aether",
+		Domain:   "aether-roc-gui.aether",
 		Value:    value,
 		MaxAge:   int(c.MaxAge.Seconds()),
 		HttpOnly: c.HTTPOnly,
